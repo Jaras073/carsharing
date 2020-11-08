@@ -1,0 +1,11 @@
+/* font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif; */
+:root {
+    --color-main: red;
+    --color-bg: #252525;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
