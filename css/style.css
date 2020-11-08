@@ -1,11 +1,490 @@
-/* font-family: 'Nunito Sans', sans-serif;
-    font-family: 'Open Sans', sans-serif; */
+/*
+font-family: 'Nunito Sans', sans-serif;
+font-family: 'Open Sans', sans-serif;
+*/
+
 :root {
-    --color-main: red;
-    --color-bg: #252525;
+    --color-main: 255, 0, 0;
+    --color-bg: 39, 39, 39;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Nunito Sans', sans-serif;
     font-family: 'Open Sans', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* -------------------------------------------- */
+/* klasy */
+/* -------------------------------------------- */
+.container {
+    max-width: 1118px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.visuallyhidden {
+    position: absolute;
+    left: -9999px;
+}
+
+.row {
+    display: flex;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row .col {
+    flex: 1;
+    margin: 0 8px;
+}
+
+.section-title {
+    margin-top: 0;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-title::before,
+.section-title::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    border-radius: 8px;
+    background: rgb(var(--color-main));
+    margin: 0 10px;
+}
+
+.section-title--light {
+    color: #fff;
+}
+
+/* -------------------------------------------- */
+/* header */
+/* -------------------------------------------- */
+.header {
+    height: 90px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: 0.2s;
+}
+
+.header.is-sticky {
+    background: #111;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    height: 80px;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo__img {
+    margin-right: 10px;
+    color: #fff;
+}
+
+.logo span {
+    color: rgb(var(--color-main));
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.menu {
+    height: 100%;
+}
+
+.menu__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    height: 100%;
+}
+
+.menu__list-el {
+    height: 100%;
+}
+
+.menu__list-link {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.menu__list-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* -------------------------------------------- */
+/* banner */
+/* -------------------------------------------- */
+.banner {
+    --c1: rgba(0, 0, 0, 0.2);
+    --c2: rgba(0, 0, 0, 0.4);
+    height: 100vh;
+    min-height: 670px;
+    background:
+        radial-gradient(var(--c1), var(--c2)),
+        url(../images/image.jpg) center top / cover no-repeat;
+
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.banner__title {
+    font-size: 90px;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    font-weight: 900;
+}
+
+.banner__text {
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: center;
+    max-width: 1040px;
+}
+
+.banner__buttons {
+    margin-top: 50px;
+}
+
+.banner__btn1,
+.banner__btn2 {
+    width: 220px;
+    height: 65px;
+    display: inline-flex;
+    background: #000;
+    color: #fff;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 10px;
+    transition: 0.2s;
+}
+
+.banner__btn1 {
+    background: rgb(var(--color-main));
+    color: #fff;
+
+}
+
+.banner__btn1:hover {
+    box-shadow: 0 0 0 10px rgba(var(--color-main), 0.3);
+}
+
+.banner__btn2 {
+    background: #fff;
+    color: rgb(var(--color-main));
+}
+
+.banner__btn2:hover {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.banner__arrow {
+    width: 55px;
+    height: 55px;
+    background: rgb(var(--color-main));
+    background-image: url(images/icon-arrow-down.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 3px 6px rgba(var(--color-main), 0.3);
+}
+
+/* -------------------------------------------- */
+/* box */
+/* -------------------------------------------- */
+.main-blog {
+    padding: 90px 0 90px;
+}
+
+.box {}
+
+.box__link {}
+
+.box__img {}
+
+.box__title {
+    font-size: 19px;
+    font-family: 'Nunito Sans', sans-serif;
+    text-transform: uppercase;
+    color: #444;
+}
+
+.box__text {
+    font-size: 14px;
+    font-weight: 300;
+    color: #666;
+}
+
+.box__button {
+    padding: 12px 30px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgb(var(--color-main));
+    display: inline-flex;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0px 3px 6px rgba(var(--color-main), 0.3);
+}
+
+/* -------------------------------------------- */
+/* service */
+/* -------------------------------------------- */
+.main-service {
+    padding: 60px 0 90px;
+    background: rgb(var(--color-bg));
+}
+
+.main-service .row {
+    margin-top: 70px;
+}
+
+.main-service .box {
+    text-align: center;
+}
+
+.main-service .box__link {
+    width: 170px;
+    height: 170px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.main-service .box__title {
+    color: #fff;
+}
+
+.main-service .box__text {
+    color: #b2b2b2;
+    line-height: 1.5em;
+}
+
+.main-service .box__button {}
+
+
+/* -------------------------------------------- */
+/* formularz */
+/* -------------------------------------------- */
+.main-contact {
+    padding: 60px 0 90px;
+}
+
+.form {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: calc(444px + 16px);
+    background-image: url(../images/form-photo.png);
+    background-size: 444px auto;
+    background-repeat: no-repeat;
+}
+
+.form__row {
+    margin-bottom: 20px;
+}
+
+.form__control {
+    height: 38px;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    width: 100%;
+    padding: 0 10px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.form__control::placeholder {
+    color: #B2B2B2;
+}
+
+textarea.form__control {
+    height: 140px;
+    padding: 10px;
+    resize: vertical;
+    min-height: 100px;
+    max-height: 300px;
+}
+
+.form__control:focus {
+    outline: none;
+    border-color: rgb(var(--color-main));
+    box-shadow: 0px 1px 6px rgb(var(--color-main), 0.4)
+}
+
+.form__btn {
+    padding: 12px 30px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: rgb(var(--color-main));
+    border: 1px solid rgb(var(--color-main));
+    background: #fff;
+    display: inline-flex;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0px 3px 6px rgba(var(--color-main), 0.3);
+    width: 140px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    cursor: pointer;
+}
+
+.checkbox {
+    display: flex;
+}
+
+.checkbox__input {
+    flex-shrink: 0;
+    margin-right: 10px;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.checkbox__input:checked {
+    background: url(../images/icon-check.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.checkbox__input:focus {
+    outline: none;
+    border-color: rgb(var(--color-main));
+    box-shadow: 0px 1px 6px rgb(var(--color-main), 0.4)
+}
+
+.checkbox__text {
+    color: #B2B2B2;
+    font-size: 13px;
+    line-height: 1.5em;
+}
+
+/* -------------------------------------------- */
+/* footer */
+/* -------------------------------------------- */
+.footer {
+    background: rgb(var(--color-bg));
+    padding: 40px 0;
+}
+
+.footer .logo {
+    font-size: 25px;
+}
+
+.footer .logo__img {
+    max-width: 20px;
+}
+
+.footer__container {}
+
+.footer__bottom {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.footer-menu {
+    max-width: 560px;
+}
+
+.footer-menu__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-menu__list-el {
+    width: 50%;
+    margin-bottom: 6px;
+}
+
+.footer-menu__list-link {
+    font-family: 'Nunito Sans', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.footer-menu__list-link:hover {
+    color: rgb(var(--color-main));
+}
+
+.footer__copyright {
+    color: #d1d1d1;
 }
