@@ -240,7 +240,7 @@ img {
     width: 55px;
     height: 55px;
     background: rgb(var(--color-main));
-    background-image: url(images/icon-arrow-down.svg);
+    background-image: url(/images/Icon\ Arrow\ Down.svg);
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 50%;
@@ -393,6 +393,7 @@ textarea.form__control {
     align-items: center;
     float: right;
     cursor: pointer;
+    outline: none;
 }
 
 .checkbox {
@@ -412,7 +413,7 @@ textarea.form__control {
 }
 
 .checkbox__input:checked {
-    background: url(../images/icon-check.svg);
+    background: url(/images/Icon\ Check.svg);
     background-position: center;
     background-repeat: no-repeat;
 }
